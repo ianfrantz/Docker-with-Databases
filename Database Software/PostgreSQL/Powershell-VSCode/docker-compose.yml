@@ -1,0 +1,20 @@
+postgres:
+  image: postgres:latest
+  container_name: PostgreSQL-Latest
+  ports:
+    - 5432:5432
+  volumes_from:
+ # links the data volume specified below
+    - dat
+  environment:
+# parameters passed to postgres when it loads
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_USER: postgres
+    PGDATA : /var/lib/postgresql/data/pgdata
+
+# holds source code and used as a staging area to download dvdrental
+dat:
+  image: alpine:latest
+  volumes:
+    - ./:/src
+  command: "true"
