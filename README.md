@@ -1,6 +1,6 @@
-Goal: Scripted Docker deployments for the latest SQL Server and PostgreSQL database software.
-Subgoal: Optional database restores of Adventureworks or DVDRental.
-Noteable: Intermediate SQL Server code and Stress Testing available too.
+# Goal: Scripted Docker deployments for the latest SQL Server and PostgreSQL database software.
+* Subgoal: Optional database restores of Adventureworks or DVDRental.
+* Noteable: Intermediate SQL Server code and Stress Testing available too.
 
 
 # Set-up
