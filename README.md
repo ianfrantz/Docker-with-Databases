@@ -1,7 +1,7 @@
 Goal: Scripted Docker deployments for the latest SQL Server and PostgreSQL database software.
 Subgoal: Optional database restores of Adventureworks or DVDRental.
 Noteable: Intermediate SQL Server code and Stress Testing available too.
-=======
+
 
 # Set-up
 * All files are in numerical order of execution. `1.*, 2.*, 3.* ect`
@@ -14,7 +14,6 @@ Noteable: Intermediate SQL Server code and Stress Testing available too.
 
 # Docker Exec 
 * `docker exec` to create PostgreSQL-Latest
-
 
 Handy [psql commands](https://gpdb.docs.pivotal.io/gs/43/pdf/PSQLQuickRef.pdf)
 
