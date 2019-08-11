@@ -1,22 +1,23 @@
 #Docker Pull
-docker pull postgres
+docker pull postgres:latest
 
-#Run under the Dockerfiles where YAML is
 #docker-compose command reads 'docker-compose.yml'
 docker-compose up -d
 
-docker exec dockerfiles_postgres9_1 psql -U postgres -c "CREATE DATABASE dvdrental"
+#Steps to now restore dvdrental database on PostgreSQL-Latest container.
+docker exec PostgreSQL-Latest psql -U postgres -c "CREATE DATABASE dvdrental"
+docker exec PostgreSQL-Latest pg_restore -v -U postgres -d dvdrental ./src/dvdrental.tar
 
-docker exec dockerfiles_postgres9_1 pg_restore -v -U postgres -d dvdrental ./src/dvdrental.tar
+#----This is the end of the script----
 
-#Set-up the Container:
-docker run `
---name PostgreSQL-DVDRental `
--p 1433:1433 `
--e "ACCEPT_EULA=Y" `
--e "SA_PASSWORD=postgres" `
--v ./:/sql `
--d postgres
+#Alternative Container Set-up and troublehsooting:
+# docker run `
+# --name PostgreSQL-Latest `
+# -p 1433:1433 `
+# -e "ACCEPT_EULA=Y" `
+# -e "SA_PASSWORD=postgres" `
+# -v ./:/sql `
+# -d postgres
 
-#Bash on the Container
-docker exec -ti sql-pet_postgres9_1 bash
+# #Bash on the Container
+# docker exec -ti PostgreSQL-Latest bash
