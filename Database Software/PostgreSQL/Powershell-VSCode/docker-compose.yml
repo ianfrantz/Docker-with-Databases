@@ -16,5 +16,5 @@ postgres:
 dat:
   image: alpine:latest
   volumes:
-    - ./:/src
+    - ./DatabaseBackups/dvdrental:/src
   command: "true"
