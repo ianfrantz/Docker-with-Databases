@@ -1,8 +1,9 @@
 /****************************** Prologue *******************************************
 ***
-***    Purpose:					Creates a database from a flatfile
-***    Object type:				Database
-***    Name:					CTRL+ALT+M 
+***    Purpose: 			
+***    Object type: View
+***    Name:  
+***    Hardcoded: N/A
 ***********************************************************************************/
 GO
 

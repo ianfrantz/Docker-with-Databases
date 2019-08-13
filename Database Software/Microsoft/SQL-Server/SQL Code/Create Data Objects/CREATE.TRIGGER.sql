@@ -1,9 +1,9 @@
 /****************************** Prologue *******************************************
 ***
 ***    Purpose:					Creates a database from a flatfile
-***    Object type:				Database
+***    Object type:				Trigger
 ***    Name:					CTRL+ALT+M - Replaces: <Database_Name, sysname, Database_ToRunIn>
-***    Hardcoded:				sp_changedbowner 'sa'
+***    Hardcoded:				N/A
 ***********************************************************************************/
 
 USE [<Database_Name, sysname, DatabaseToRunIn>] ;
@@ -26,8 +26,6 @@ CREATE TRIGGER [<Schema_Name, sysname, Schema_Name>].[<Trigger_Name, sysname, Tr
 AS 
 
 BEGIN
-	-- SET NOCOUNT ON added to prevent extra result sets from
-	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 
     -- Insert statements for trigger here

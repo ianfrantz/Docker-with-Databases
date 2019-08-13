@@ -12,9 +12,20 @@
  + Use F1 to bring up user workspace settings if your paths need configured.
  + Disable your local Windows 10 Firewall if you have trouble.
 
-# Docker Exec 
-* `docker exec` to create PostgreSQL-Latest
+# Launch
+* ContainerNames: 
++ `PostgreSQL-Latest`
++ `MSSQL-Latest`
 
+* Type `docker start [ContainerName]` 
+* Stop with `docker stop [ContainerName]`
+
+# Connect
+* PostgreSQL: localhost:1433
+* SQL Server: localhost:1433
+
+### ------
+# Troubleshooting
 Handy [psql commands](https://gpdb.docs.pivotal.io/gs/43/pdf/PSQLQuickRef.pdf)
 
   + To run the Docker container that contains Postgres, you can enter this from a command prompt:

@@ -3,7 +3,7 @@
 ***    Purpose:					
 ***    Object type:				
 ***    Name:					
-***    Hardcoded:				
+***    Hardcoded:
 ***********************************************************************************/
 
 DECLARE @Frequency INT;
