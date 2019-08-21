@@ -30,16 +30,22 @@ Handy [psql commands](https://gpdb.docs.pivotal.io/gs/43/pdf/PSQLQuickRef.pdf)
 
   + To run the Docker container that contains Postgres, you can enter this from a command prompt:
 
-    `$ docker exec -ti sql-pet_postgres9_1 bash`
+    `$ docker exec -ti [ContainerName] bash`
+
+  + Inside Docker, you can enter the Postgres command-line utility psql by entering: 
+
+    `# psql -U postgres`
 
   + To exit Docker enter:
 
     `# exit`
-
-  + Inside Docker, you can enter the Postgres command-line utility psql by entering 
-
-    `# psql -U postgres`
-
+    
+  + To remove all containers:
+  
+  `docker rm $(docker ps -a -q)`
+  
+  
++ Other:
     Handy [psql commands](https://gpdb.docs.pivotal.io/gs/43/pdf/PSQLQuickRef.pdf) include:
 
     + `postgres=# \h`          # psql help

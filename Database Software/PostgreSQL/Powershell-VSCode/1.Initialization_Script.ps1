@@ -6,7 +6,15 @@ docker-compose up -d
 
 #Steps to now restore dvdrental database on PostgreSQL-Latest container.
 docker exec PostgreSQL-Latest psql -U postgres -c "CREATE DATABASE dvdrental"
-docker exec PostgreSQL-Latest pg_restore -v -U postgres -d dvdrental ./src/dvdrental.tar
+docker exec PostgreSQL-Latest pg_restore -v -U postgres -d dvdrental ./src/dvdrental/dvdrental.tar
+
+#Steps to now restore dvdrental database on PostgreSQL-Latest container.
+docker exec PostgreSQL-Latest psql -U postgres -c "CREATE DATABASE adventureworks"
+docker exec PostgreSQL-Latest pg_restore -v -U postgres -d adventureworks ./src/adventureworks/adventureworks.sql
+
+
+
+
 
 #----This is the end of the script----
 
