@@ -3,13 +3,15 @@ docker pull mcr.microsoft.com/mssql/server
 #Sql Server cmd Tools
 docker pull mcr.microsoft.com/mssql-tools
 
+
+$wd = Get-Location
 #Set-up the Container:
 docker run `
 --name MSSQL-Latest `
 -p 1433:1433 `
 -e "ACCEPT_EULA=Y" `
 -e "SA_PASSWORD=F00B4rB4z!" `
--v ./DatabaseBackups:/src `
+-v $wd/DatabaseBackups:/src `
 -d mcr.microsoft.com/mssql/server:latest
 
 
