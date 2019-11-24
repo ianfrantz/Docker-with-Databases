@@ -1,10 +1,9 @@
 /****************************** Prologue *******************************************
 *****
-*****    Purpose:	Template for creating a look up table(LUT).
-*****    Activation:	CTRL+SHIFT+M		
+*****	Purpose: Template for creating a look up table(LUT).
+*****	Example: This example creates a LUT for four business zones and two sales reps.	
+*****	Activation:	CTRL+SHIFT+M		
 ***********************************************************************************/
-
-/**Createa a LUT**/
 USE [<DatabaseName, VARCHAR, NULL>]
 
 ---Code chunk that will remove all constraints except the PK---
@@ -28,7 +27,7 @@ BEGIN
 ALTER TABLE [dbo].[<LUTName, VARCHAR, NULL>] DROP CONSTRAINT [DF_<LUTName, VARCHAR, NULL>_User]
 END
 
---SQL to create unique columns for '<LUTName, VARCHAR, NULL>'
+--SQL to create the constraint and unique columns for lookup table name: '<LUTName, VARCHAR, NULL>'
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].<LUTName, VARCHAR, NULL>') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[<LUTName, VARCHAR, NULL>](
@@ -42,14 +41,14 @@ CREATE TABLE [dbo].[<LUTName, VARCHAR, NULL>](
 	Territory VARCHAR(255) NULL,
 	Rep VARCHAR(255) NULL
 
-
  CONSTRAINT [PK_ID] PRIMARY KEY CLUSTERED 
 (
 	[ID],
 	[ZoneId]
 )) ON [PRIMARY]
 END
----Code block that creates default constraints---
+
+---Code block that creates our default constraints---
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DF_<LUTName, VARCHAR, NULL>]') AND type = 'D')
 BEGIN
 ALTER TABLE [dbo].[<LUTName, VARCHAR, NULL>] ADD  CONSTRAINT [DF_<LUTName, VARCHAR, NULL>_IsActive]  DEFAULT ((1)) FOR [IsActive]
@@ -70,7 +69,7 @@ BEGIN
 ALTER TABLE [dbo].[<LUTName, VARCHAR, NULL>] ADD  CONSTRAINT [DF_<LUTName, VARCHAR, NULL>_User]  DEFAULT (CURRENT_USER) FOR [User]
 END
 
----Create @YourBusinessZones table with basic info---
+---Create @YourBusinessZones table with basic business info---
 DECLARE @SalesZones TABLE
 (
 	ZoneId INT NOT NULL
@@ -79,7 +78,7 @@ INSERT INTO @SalesZones(ZoneId)
 VALUES(1), (2), (3), (4)
 
 
---SQL to Populate LUT: '<LUTName, VARCHAR, NULL>'
+--SQL to populate new LUT: '<LUTName, VARCHAR, NULL>'
 INSERT INTO <LUTName, VARCHAR, NULL>(ZoneId, Territory, Rep)
 	SELECT 
 	ZoneId,
