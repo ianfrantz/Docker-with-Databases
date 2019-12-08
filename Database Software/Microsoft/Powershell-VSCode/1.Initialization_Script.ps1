@@ -14,10 +14,21 @@ docker run `
 -v $wd/DatabaseBackups:/src `
 -d mcr.microsoft.com/mssql/server:latest
 
+#-----Restore Database Backups with dbatools-----
+#Install dbatools
+Install-Module -Name dbatools 
 
-#-----Attempted Backup Chunk-----
-#Code below doesn't work but one day might. For now just backup the database in SQL Server.
+# Set the credentials for the SA Account. Connect to local MS SQL Server 2019
+$cred = Get-Credential
+Get-DbaCredential -SqlInstance localhost:1433
 
+Restore-DbaDatabase -SqlInstance localhost:1433 -SqlCredential $cred -Path /src/adventureworks/AdventureWorks2017.bak
+
+#Get Logs
+Get-DbatoolsLog
+
+#-----Attempted Backup using mssql-tools-----
+#Code below doesn't work but one day might. F
 
 # docker exec MSSQL-Latest /opt/mssql-tools/bin/sqlcmd `
 # -S localhost `
@@ -26,42 +37,9 @@ docker run `
 
 # -Q "BACKUP DATABASE [Production-Snapshot] TO DISK = N'/var/opt/mssql/backup/Production-Snapshot.bak' WITH NOFORMAT, NOINIT, NAME = 'Production-Snapshot-full', SKIP, NOREWIND, NOUNLOAD, STATS = 10"
 
-#----
+#-----Below code is just interesting stuff I want to keep-----
 
-#-----Attempted DBA Tools chunk-----
-#---This code will pass all validations but will not work. I'm hoping that in time this will eventually be supported in Docker.
-
-# #Install dbatools
-# Install-Module -Name dbatools 
-
-# #Set-up credentials in xml document
-# $CredentialPath = 'C:\Docker\SQL\credentials.xml'
-# Get-Credential | Export-Clixml -Path $CredentialPath
-# $cred = Import-Clixml $CredentialPath 
-
-# #Connect to local MS SQL Server 2019
-# help New-DbaCmConnection -Examples
-# #$cred = Get-Credential 
-# New-DbaCmConnection -ComputerName localhost -Credential $cred -CimWinRMOptions $options -DisableBadCredentialCache -OverrideExplicitCredential
-
-# #Look at connection cache and run a test
-# Get-DbaCmConnection
-# Test-DbaCmConnection -ComputerName localhost -Force
-
-# Get-DbaCredential -SqlInstance localhost
-
-# #Get Logs
-# Get-DbatoolsLog
-
-
-
-# #Create a new connection object for remote computer management(Cm)
-# New-DbaCmConnection -ComputerName localhost -UseWindowsCredentials
-
-# New-DbaConnectionString -SqlInstance localhost -TrustServerCertificate 'TRUE'
-
-# param( 
-    
+# param(     
 #     $SqlServer = "localhost", 
 #     $SqlServerPort = 1433, 
 #     $SqlQueryTimeout = 30, 
@@ -78,3 +56,10 @@ docker run `
 #     SqlCredentialAsset = 'SA'
 #     SqlQuery = 'SELECT TOP [1] * FROM Example'
 # }
+
+# #Set-up credentials in xml document
+# $CredentialPath = 'C:\Docker\SQL\credentials.xml'
+# Get-Credential | Export-Clixml -Path $CredentialPath
+# $cred = Import-Clixml $CredentialPath 
+
+#New-DbaConnectionString -SqlInstance localhost:1433 -TrustServerCertificate 'TRUE'
