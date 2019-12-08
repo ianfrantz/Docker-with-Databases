@@ -20,8 +20,6 @@ Install-Module -Name dbatools
 
 # Set the credentials for the SA Account. Connect to local MS SQL Server 2019
 $cred = Get-Credential
-Get-DbaCredential -SqlInstance localhost:1433
-
 Restore-DbaDatabase -SqlInstance localhost:1433 -SqlCredential $cred -Path /src/adventureworks/AdventureWorks2017.bak
 
 #Get Logs
