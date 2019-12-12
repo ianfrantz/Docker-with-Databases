@@ -14,6 +14,7 @@ docker run `
 -v $wd/DatabaseBackups:/src `
 -d mcr.microsoft.com/mssql/server:latest
 
+
 #-----Restore Database Backups with dbatools-----
 #Install dbatools
 Install-Module -Name dbatools 
@@ -34,15 +35,24 @@ Restore-DbaDatabase -SqlInstance localhost:1433 -SqlCredential $cred -Path /src/
 #Get Logs from Dba Tools
 Get-DbatoolsLog
 
-#-----Attempted Backup using mssql-tools-----
-#Code below doesn't work but one day might. F
+
+#-----Using mssql-tools-----
+#See version of SQL Server with mssql-tools sqlcmd 
+sqlcmd -S localhost -U sa -P F00B4rB4z! 
+#TYPE: SELECT @@VERSION 
+#TYPE: GO 
+
+#Execute SQL Scripts
+sqlcmd `
+-S localhost `
+-i $wd/DatabaseBackups/HappyScoopers_Demo/'01 - Create HappyScoopers_Demo.sql'
 
 # docker exec MSSQL-Latest /opt/mssql-tools/bin/sqlcmd `
 # -S localhost `
 # -U "SA" `
 # -P "SA_PASSWORD=F00B4rB4z!" 
-
 # -Q "BACKUP DATABASE [Production-Snapshot] TO DISK = N'/var/opt/mssql/backup/Production-Snapshot.bak' WITH NOFORMAT, NOINIT, NAME = 'Production-Snapshot-full', SKIP, NOREWIND, NOUNLOAD, STATS = 10"
+
 
 #-----Below code is just interesting stuff I want to keep-----
 
