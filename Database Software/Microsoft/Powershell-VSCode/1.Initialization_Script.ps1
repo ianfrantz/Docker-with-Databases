@@ -3,7 +3,7 @@ docker pull mcr.microsoft.com/mssql/server
 #Sql Server cmd Tools
 docker pull mcr.microsoft.com/mssql-tools
 
-
+#NOTE: Relative paths is an open issue. $wd is used to get around the problem. You will need to set this to repo path: \Database\ Software\Microsoft\Powershell-VSCode\
 $wd = Get-Location
 #Set-up the Container:
 docker run `
@@ -19,10 +19,19 @@ docker run `
 Install-Module -Name dbatools 
 
 # Set the credentials for the SA Account. Connect to local MS SQL Server 2019
-$cred = Get-Credential
+$cred = Get-Credential -UserName sa
+
+#Restore Adventureworks2017
 Restore-DbaDatabase -SqlInstance localhost:1433 -SqlCredential $cred -Path /src/adventureworks/AdventureWorks2017.bak
 
-#Get Logs
+#Restore Adventureworks Data Warehouse
+Restore-DbaDatabase -SqlInstance localhost:1433 -SqlCredential $cred -Path /src/adventureworks/AdventureWorksDW2017.bak
+
+#MANUAL TASK: Restore Wide World Importers after moving it into $wd.
+Restore-DbaDatabase -SqlInstance localhost:1433 -SqlCredential $cred -Path /src/wideworldimporters/WideWorldImporters-Full.bak
+
+#-----Troubleshooting-----
+#Get Logs from Dba Tools
 Get-DbatoolsLog
 
 #-----Attempted Backup using mssql-tools-----
