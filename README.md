@@ -1,7 +1,21 @@
-# Goal: Scripted Docker deployments for the latest SQL Server and PostgreSQL database software.
-* Subgoal: Optional database restores of Adventureworks or DVDRental.
-* Noteable: Intermediate SQL Server code and Stress Testing available too.
+# This project is open for collaboration and contains the following at various levels: 
+* Beginner: 
+  + PowerShell Docker deployments for MSSQL-Latest and PostgreSQL-Latest database software.
+  + Docker run and compose examples
+* Intermediate: 
+  + [dbatools](https://dbatools.io/) Restore and `Backup-DbaDatabase`
+  + Power BI 
+* Advanced 
+  + T-SQL Code
+  + SQL Server Stress Testing
 
+# Main Databases in Project:
+* SQL Server:
+  + AdventureWorks2017
+  + AdventureWorksDW2017
+* PostgreSQL:
+  + adventureworks
+  + dvdrental
 
 # Set-up
 * All files are in numerical order of execution. `1.*, 2.*, 3.* ect`
