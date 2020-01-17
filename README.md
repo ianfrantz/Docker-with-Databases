@@ -5,7 +5,7 @@
 * Intermediate: 
   + [dbatools](https://dbatools.io/) Restore and `Backup-DbaDatabase`
   + Power BI 
-* Advanced 
+* Advanced: 
   + T-SQL Code
   + SQL Server Stress Testing
 
