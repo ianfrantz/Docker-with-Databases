@@ -1,9 +1,11 @@
 #-----Restore Database Backups with dbatools-----
 #Install dbatools (Command List: https://dbatools.io/commands/)
-Install-Module -Name dbatools 
+Install-Module -Name dbatools
 
 # Set the credentials for the SA Account. Connect to local MS SQL Server 2019
-$cred = Get-Credential -UserName sa -P F00B4rB4z! 
+$User = "sa"
+$PWord = ConvertTo-SecureString -String "F00B4rB4z!" -AsPlainText -Force
+$Cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord
 
 
 #-----RESTORATION-----
@@ -14,7 +16,7 @@ Restore-DbaDatabase -SqlInstance localhost:1433 -SqlCredential $cred -Path /src/
 Restore-DbaDatabase -SqlInstance localhost:1433 -SqlCredential $cred -Path /src/adventureworks/AdventureWorksDW2017.bak
 
 #MANUAL TASK: Restore Wide World Importers after moving it into $wd. (File too big for github)
-Restore-DbaDatabase -SqlInstance localhost:1433 -SqlCredential $cred -Path /src/wideworldimporters/WideWorldImporters-Full.bak
+Restore-DbaDatabase -SqlInstance localhost:1433 -SqlCredential $cred -Path /src/WideWorldImporters/WideWorldImporters-Full.bak
 
 
 #-----BACKUP-----
