@@ -1,0 +1,586 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/11/2020 4:48:08 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-EHQK22F"
+  DTS:CreatorName="DESKTOP-EHQK22F\ianfr"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{50506830-E70D-4C0D-8A14-FD2AD64583AA}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="New Package"
+  DTS:VersionGUID="{A8618732-76AD-432A-BC3C-41EF54AA824E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7465D9FF-923E-42C2-8C4E-EEAFE022C1D8}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=AdventureWorks2017;Provider=SQLOLEDB;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAusGrHyjKokuwuScInXTveAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAlUT57bXF5kgoTg7eqetG2eK5PbLWm+IsFpvHMmiSYSQAAAAAOgAAAAAIAACAAAADQZSy2CeQAzIiVcSlsRCn+rg8ABuUnq+BfXZTSkW3hayAAAABCGQe/T7mpa/bRBDmq1pY1KbKNFIOHxp5sS87TMym/k0AAAABp7roH5ogAqwuZrVzvCp/bRGlWGg0bPtu93igIKvio+uSWRZt69yaZHoHu8dK0HG6TvioBMqfpTndRFQfEZ0dO</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{12FDF2F5-B54E-44DE-819C-24DAC0A83B67}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\ianfr\Desktop\R_Programs\Docker-with-Databases\Database Software\Microsoft\Powershell-VSCode\DatabaseBackups\WideWorldImporters\WWISpaceUsed1.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Colors"
+              DTS:DTSID="{4206A8B0-A7DB-41CF-9C55-67D09C1AF7B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;36                  &quot;"
+              DTS:DTSID="{2E1F327F-05ED-43EA-8B71-1771D3CE2465}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="144 KB"
+              DTS:DTSID="{736DE70B-BA0B-4C94-A62F-04A5BDD69269}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="8 KB"
+              DTS:DTSID="{37014E41-3E7D-4EDF-846F-61207F241B8F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="24 KB"
+              DTS:DTSID="{51C0728F-9198-45EA-A152-9EFA0F624E7F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="112 KB"
+              DTS:DTSID="{C6B9DB49-8B1B-41E9-88E7-6660AB9ADE45}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{54D87E5C-A756-4C43-8C28-72FCB9D26AAA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - WWISpaceUsed1"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[WWISpaceUsed1]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].Columns[Colors]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Colors"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].ExternalColumns[Colors]"
+                      lineageId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[Colors]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].Columns[&quot;36                  &quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;36                  &quot;"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].ExternalColumns[&quot;36                  &quot;]"
+                      lineageId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[&quot;36                  &quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].Columns[144 KB]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="144 KB"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].ExternalColumns[144 KB]"
+                      lineageId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[144 KB]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].Columns[8 KB]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="8 KB"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].ExternalColumns[8 KB]"
+                      lineageId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[8 KB]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].Columns[24 KB]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="24 KB"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].ExternalColumns[24 KB]"
+                      lineageId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[24 KB]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].Columns[112 KB]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="112 KB"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].ExternalColumns[112 KB]"
+                      lineageId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[112 KB]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].ExternalColumns[Colors]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Colors" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].ExternalColumns[&quot;36                  &quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;36                  &quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].ExternalColumns[144 KB]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="144 KB" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].ExternalColumns[8 KB]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="8 KB" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].ExternalColumns[24 KB]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="24 KB" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input].ExternalColumns[112 KB]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="112 KB" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - WWISpaceUsed1_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[Colors]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].ExternalColumns[Colors]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[Colors]"
+                      name="Colors"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[&quot;36                  &quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].ExternalColumns[&quot;36                  &quot;]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[&quot;36                  &quot;]"
+                      name="&quot;36                  &quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[144 KB]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].ExternalColumns[144 KB]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[144 KB]"
+                      name="144 KB"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[8 KB]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].ExternalColumns[8 KB]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[8 KB]"
+                      name="8 KB"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[24 KB]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].ExternalColumns[24 KB]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[24 KB]"
+                      name="24 KB"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[112 KB]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].ExternalColumns[112 KB]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].Columns[112 KB]"
+                      name="112 KB"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].ExternalColumns[Colors]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Colors" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].ExternalColumns[&quot;36                  &quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;36                  &quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].ExternalColumns[144 KB]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="144 KB" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].ExternalColumns[8 KB]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="8 KB" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].ExternalColumns[24 KB]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="24 KB" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output].ExternalColumns[112 KB]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="112 KB" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Destination - WWISpaceUsed1.Inputs[Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - WWISpaceUsed1_csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Preparation SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{4A780D45-7FC2-4F45-8F77-870D957FC0C5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Preparation SQL Task 1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7465D9FF-923E-42C2-8C4E-EEAFE022C1D8}"
+          SQLTask:SqlStatementSource="CREATE TABLE [dbo].[WWISpaceUsed1] (&#xA;[Colors] varchar(50),&#xA;[&quot;36                  &quot;] varchar(50),&#xA;[144 KB] varchar(50),&#xA;[8 KB] varchar(50),&#xA;[24 KB] varchar(50),&#xA;[112 KB] varchar(50)&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{713DF5C6-0938-4C3C-896D-BC62587CE03D\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{713DF5C6-0938-4C3C-896D-BC62587CE03D}"
+      DTS:From="Package\Preparation SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{713DF5C6-0938-4C3C-896D-BC62587CE03D}"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+</DTS:Executable>
