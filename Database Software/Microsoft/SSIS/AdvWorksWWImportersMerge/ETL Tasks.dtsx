@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/26/2020 4:18:38 PM"
@@ -11,26 +11,11 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{943EBA65-6019-4F7A-A096-9E7633CB3A69}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{6059EEBA-CA65-45E0-8927-0BDFEC662E14}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[.]"
-      DTS:CreationName="ADO.NET:SQL"
-      DTS:DTSID="{0275F330-254C-45D1-BFF4-073541EB9B0E}"
-      DTS:ObjectName=".">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=.;User ID=sa;Connect Timeout=30;">
-          <DTS:Password
-            DTS:Name="PWD"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAusGrHyjKokuwuScInXTveAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA4WbjMB5HUhHLZEa6u6492uDFq+o4yHCcbWyuUQ4Cy5AAAAAAOgAAAAAIAACAAAAAc1WlDu/PwASS+Bm8LDoU1FOU05/NC5E86F2qAKrzb5yAAAACsnfypGb+ByJORVWKM4KpOuc96BlIkngGZwXXFww5ItUAAAAA7EbEzB5Nijl+3NiVhwbw/0pO6HouV0lvC4gua3r6vwioCuha3HZsNIWUMkm4OU4ZIW+ins5xkKxX6bFgODq4E</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.WideWorldImporters.sa]"
       DTS:CreationName="OLEDB"
@@ -42,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAusGrHyjKokuwuScInXTveAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAALlBVy/gU0ddkuRCIA/3ps9lgEl42uF5F9cm7t3WOQcwAAAAAOgAAAAAIAACAAAAARWmsLrE7H34sAb3jOixZjgp0oakzADQWjwdWs31gs0iAAAAC5s4OrLMzNUKvurSEJhFUt6bhJW0GBctWXzZFO7fDusEAAAAByhXPB8YFQYQHtncTxHbL14oRnDJTdypEV5n48ex1t4T7tPqfHDjcYyi/GKxqjZNEsJPJfmyTTo8spE00Tjs1M</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAusGrHyjKokuwuScInXTveAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABIQPPF+C5ygRub82Z5cPcJr7tc3WFP88rTyuvAWFJn2gAAAAAOgAAAAAIAACAAAADc8F28v/vK/FhoRdUxfs3YCZ2DFdFjpdSxa5mph300GiAAAABeTRC9ewltShs1uDRNZ2sYrSA03yiAbfXtx96TQxU7jUAAAADdUQuqI1g01I1VRszHDpMIFSvfN3V3cSF9ZzXesWNuUVZ8ci7+16RXz74QHmm5XtZIpncMcrAJ5isPndOLxQFU</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -139,7 +124,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Back Up Database Task"
           DTS:TaskContact="Back Up Database Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -203,7 +188,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Check Database Integrity Task"
           DTS:TaskContact="Check Database Integrity Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -269,6 +254,23 @@
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Backup and Check Databases"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{1423BBAA-392A-40B0-A9E6-B8965783F44F}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Backup and Check Databases"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Admin Tasks.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Generate Space Utilization Report"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
@@ -311,7 +313,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Feed Space Used"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -353,39 +355,6 @@
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Power of two"
-      DTS:AssignExpression="@Power = @Power + 1"
-      DTS:CreationName="STOCK:FORLOOP"
-      DTS:Description="For Loop Container"
-      DTS:Disabled="True"
-      DTS:DTSID="{9136A0F9-6799-44D1-BBB3-168DBD307D91}"
-      DTS:EvalExpression="@Power &lt;= 10"
-      DTS:ExecutableType="STOCK:FORLOOP"
-      DTS:InitExpression="@Power = 1"
-      DTS:LocaleID="-1"
-      DTS:MaxConcurrent="1"
-      DTS:ObjectName="Power of two">
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Power of two\Expression Task"
-          DTS:CreationName="Microsoft.ExpressionTask"
-          DTS:Description="Expression Task"
-          DTS:DTSID="{7C31B2D8-BC93-466D-A715-CE22E4CE3C9B}"
-          DTS:ExecutableType="Microsoft.ExpressionTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Expression Task"
-          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExpressionTask
-              Expression="@[User::Base] =  @[User::Base] *2" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Wide World Importers Space Utilization"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
@@ -420,7 +389,7 @@
           DTS:ExecutableType="Microsoft.BulkInsertTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load File into Table"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <BulkInsertTask:BulkInsertTaskData
@@ -532,16 +501,14 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="461,234"
-          Size="461,43"
+          Size="461,277"
           Id="Package\Admin Task - Backup Databases (FOM)"
           TopLeft="66,80" />
         <NodeLayout
@@ -596,17 +563,6 @@
           Id="Package\Generate Space Utilization Report"
           TopLeft="63,202" />
         <NodeLayout
-          Size="160,42"
-          Id="Package\Power of two\Expression Task"
-          TopLeft="135,38" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="429,181"
-          Size="429,43"
-          Id="Package\Power of two"
-          TopLeft="65,138" />
-        <NodeLayout
           Size="175,42"
           Id="Package\Wide World Importers Space Utilization\Load File into Table"
           TopLeft="85,94" />
@@ -617,6 +573,10 @@
           Size="406,229"
           Id="Package\Wide World Importers Space Utilization"
           TopLeft="406,301" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Backup and Check Databases"
+          TopLeft="596,111" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

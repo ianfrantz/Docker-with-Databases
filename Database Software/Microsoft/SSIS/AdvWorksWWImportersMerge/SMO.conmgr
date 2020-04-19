@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SMO"
+  DTS:DTSID="{0275F330-254C-45D1-BFF4-073541EB9B0E}"
+  DTS:CreationName="ADO.NET:SQL">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=.;User ID=sa;Connect Timeout=30;">
+      <DTS:Password
+        DTS:Name="PWD"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAusGrHyjKokuwuScInXTveAAAAAACAAAAAAAQZgAAAAEAACAAAAB/w+IdvPMsQOthL1iMS+fTNPqrSCeEzza3t06vkR2+OAAAAAAOgAAAAAIAACAAAAAdXR8wbyLUTw9abejd0BUYCfZV7GXljuyfhKM1/BhO+YAAAAACy904pAlAArpTpZHlnR90kc9FpDnYFeSBucm67tUjn6ZdQ1LA6vn0C2SDW/Qq1HmOdGHYqdsn6G4moWaim778E9MB4M9Q2u4UYWCD8n32ycpvzluuezlMgTpCYMNvGcxPBOF0upeARrnVty8EH7Fh0HLgMB+I5EZx1OZoJj5ojEAAAABnJNSetcqk1IA24n+Gvji6LZXgO2Q/oWITCsCY2ME8y6mV0V3inOOIw9ic8h1uGIEeF0Zsv03D1+qo7qL/HyQP</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,24 @@
+﻿Colors,"36                  ",144 KB,8 KB,24 KB,112 KB
+Colors_Archive,"1                   ",72 KB,8 KB,8 KB,56 KB
+OrderLines,"231412              ",71928 KB,36904 KB,34536 KB,488 KB
+PackageTypes,"14                  ",144 KB,8 KB,24 KB,112 KB
+PackageTypes_Archive,"0                   ",0 KB,0 KB,0 KB,0 KB
+StockGroups,"10                  ",144 KB,8 KB,24 KB,112 KB
+StockItemStockGroups,"442                 ",216 KB,16 KB,48 KB,152 KB
+StockGroups_Archive,"1                   ",72 KB,8 KB,8 KB,56 KB
+StateProvinces,"53                  ",680 KB,384 KB,64 KB,232 KB
+CustomerTransactions,"97147               ",26248 KB,8944 KB,12536 KB,4768 KB
+StateProvinces_Archive,"104                 ",400 KB,256 KB,16 KB,128 KB
+Cities,"37940               ",4880 KB,3960 KB,896 KB,24 KB
+Cities_Archive,"28                  ",72 KB,8 KB,8 KB,56 KB
+SystemParameters,"1                   ",216 KB,8 KB,40 KB,168 KB
+InvoiceLines,"228265              ",53288 KB,39864 KB,13192 KB,232 KB
+Suppliers,"13                  ",576 KB,8 KB,120 KB,448 KB
+StockItemTransactions,"236667              ",52672 KB,2720 KB,37648 KB,12304 KB
+Suppliers_Archive,"13                  ",72 KB,8 KB,8 KB,56 KB
+Customers,"663                 ",976 KB,304 KB,344 KB,328 KB
+Customers_Archive,"51                  ",136 KB,16 KB,16 KB,104 KB
+PurchaseOrders,"2074                ",416 KB,136 KB,192 KB,88 KB
+Orders,"73595               ",11752 KB,5504 KB,6104 KB,144 KB
+ColdRoomTemperatures,"4                   ",NULL,NULL,NULL,NULL
+VehicleTemperatures,"65998               ",NULL,NULL,NULL,NULL

@@ -2,13 +2,23 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>AdvWorksWWImportersMerge</Name>
-    <LastWriteTime>2020-04-04T19:59:59.9670472Z</LastWriteTime>
+    <LastWriteTime>2020-04-19T21:05:12.8614019Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>Package.dtsx</Name>
-      <LastWriteTime>2020-04-04T19:59:59.9160482Z</LastWriteTime>
+      <Name>Admin Tasks.dtsx</Name>
+      <LastWriteTime>2020-04-14T02:36:53.846812Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>ETL Tasks.dtsx</Name>
+      <LastWriteTime>2020-04-14T02:03:14.5106925Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Products Merge.dtsx</Name>
+      <LastWriteTime>2020-04-19T21:05:12.7974017Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
