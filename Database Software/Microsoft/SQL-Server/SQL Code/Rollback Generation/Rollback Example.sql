@@ -24,8 +24,8 @@ DECLARE -- Declare the columns matching Person.PersonPhone
     @ModifiedDate DATETIME;
 
 --▼▼▼MODIFY BELOW THIS LINE▼▼▼
-SET @BusinessEntityID = 30052;
-SET @PhoneNumber = '666-666-6666';
+SET @BusinessEntityID = 90000;
+SET @PhoneNumber = '111-111-1111';
 SET @PhoneNumberTypeID = '1';
 SET @ModifiedDate = GETDATE();
 
@@ -97,20 +97,20 @@ BEGIN TRANSACTION @TranName
 				--Rollback INSERT actions
 				IF (SELECT Outcome FROM @RollbackTable WHERE BusinessEntityID = @RollbackPrimaryKey) = 'INSERT' 
 				BEGIN 
-					SET @AddLine = 'DELETE FROM [Adventureworks2017].[Person].[PersonPhone] WHERE BusinessEntityID = ' + CONVERT(VARCHAR(10),@RollbackPrimaryKey) + ' AND PhoneNumber = ' + '''' + CONVERT(CHAR(25), @PhoneNumber) + '''' 
+					SET @AddLine = 'DELETE FROM [Adventureworks2017].[Person].[PersonPhone] WHERE BusinessEntityID = ' + CONVERT(VARCHAR(10),@RollbackPrimaryKey) + ' AND PhoneNumber = ' + '''' + CONVERT(VARCHAR(25), @PhoneNumber) + '''' 
 				END 
 				ELSE BEGIN --Rollback UPDATE actions
 					SELECT @BusinessEntityID = Min(BusinessEntityID) FROM @RollbackTable WHERE BusinessEntityID = @RollbackPrimaryKey;
 					SELECT @ModifiedDate = Min(ModifiedDate) FROM @RollbackTable WHERE BusinessEntityID = @RollbackPrimaryKey;
 					SELECT @PhoneNumber = PhoneNumber FROM @RollbackTable WHERE BusinessEntityID = @RollbackPrimaryKey;
-					SET @AddLine = 'UPDATE [Adventureworks2017].[Person].[PersonPhone] SET' 
-						+ '
-						BusinessEntityID = ' + CONVERT(CHAR(10), @BusinessEntityID) 
-						+ '
-						, ModifiedDate = ' + '''' + CONVERT(VARCHAR(30), @ModifiedDate) +''''
-						+ '
-						WHERE BusinessEntityID = ' + CONVERT(VARCHAR(15), @RollbackPrimaryKey)
-						+ ' AND PhoneNumber = ' + '''' + CONVERT(CHAR(25), @PhoneNumber) + '''' 
+					SET @AddLine = 'UPDATE [Adventureworks2017].[Person].[PersonPhone] 
+SET' 
++ '
+BusinessEntityID = ' + CONVERT(CHAR(10), @BusinessEntityID) +'
+, ModifiedDate = ' + '''' + CONVERT(VARCHAR(30), @ModifiedDate) +'''' +'
+, PhoneNumber = ' + '''' + CONVERT(VARCHAR(25), @PhoneNumber) + '''' 
++ '
+WHERE BusinessEntityID = ' + CONVERT(VARCHAR(15), @RollbackPrimaryKey)
 				END
 				EXECUTE sp_OAMethod @FileID, 'WriteLine', Null, @AddLine
 				DELETE FROM @RollbackTable WHERE BusinessEntityID = @RollbackPrimaryKey;
